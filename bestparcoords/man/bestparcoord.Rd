@@ -4,10 +4,10 @@
 \alias{bestparcoord}
 \title{Create best parallel coords}
 \usage{
-bestparcoord(data)
+bestparcoord(df)
 }
 \arguments{
-\item{data}{A dataframe with appropriately dealt with columns}
+\item{df}{A dataframe with non-categorical columns}
 }
 \value{
 The column names in the best order
@@ -15,5 +15,5 @@ The column names in the best order
 \description{
 Returns the order to put columns in for a starting point for the best parallel coordinates.
 Also creates a preliminary plot with the returned order.
-Assumes columns are already scaled appropriately and are not categorical.
+The columns should be scaled according to user discretion and should not be categorical.
 }

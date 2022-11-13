@@ -2,9 +2,9 @@
 #'
 #' Returns the order to put columns in for a starting point for the best parallel coordinates.
 #' Also creates a preliminary plot with the returned order.
-#' Assumes columns are already scaled appropriately and are not categorical.
+#' The columns should be scaled according to user discretion and should not be categorical.
 #'
-#' @param df A dataframe with appropriately dealt with columns
+#' @param df A dataframe with non-categorical columns
 #' @return The column names in the best order
 #' @export
 bestparcoord <- function(df) {
@@ -49,6 +49,6 @@ bestparcoord <- function(df) {
     # Check the column we just added for the next one to use
     idx <- best_idx
   }
-  GGally::ggparcoord(df, columns=cols, splineFactor=10, alphaLines=0.5)
+  print(GGally::ggparcoord(df, columns=cols, splineFactor=10, alphaLines=0.5))
   return(colnames(df)[cols])
 }
